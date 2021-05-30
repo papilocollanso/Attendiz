@@ -16,11 +16,21 @@ bool hasdata = false;
 class _ScanQRState extends State<ScanQR> {
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: "Scan QR",
+    return Container(
+      // tag: "Scan QR",
       child: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text("QR Scanner"),
+          title: Text(
+            "QR Scanner",
+            style: TextStyle(
+                fontStyle: FontStyle.italic,
+                fontFamily: 'Lucida',
+                fontSize: 17,
+                color: Colors.white),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.green,
         ),
         body: Container(
           width: double.infinity,
@@ -35,45 +45,52 @@ class _ScanQRState extends State<ScanQR> {
                     child: Text(
                       "Raw Data:  ${(qrData)}",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 14, color: Colors.white),
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.launch_outlined),
+                    icon: Icon(
+                      Icons.launch_outlined,
+                      color: Colors.green,
+                    ),
                     onPressed: hasdata
                         ? () async {
                             if (await canLaunch(qrData)) {
                               print(qrData);
                               await launch(qrData);
                             } else {
-                              throw 'Could not launch ';
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: const Text('Cannot be launched'),
+                                duration: const Duration(seconds: 3),
+                              ));
                             }
                           }
                         : null,
                   ),
                 ],
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 30),
               Container(
                 width: ((MediaQuery.of(context).size.width) / 2) - 45,
-                height: 35,
+                height: 36,
                 child: OutlineButton(
-                  focusColor: Colors.red,
-                  highlightColor: Colors.blue,
-                  hoverColor: Colors.lightBlue[100],
-                  splashColor: Colors.blue,
                   borderSide: BorderSide(
-                    width: 3,
-                    color: Colors.blue,
+                    width: 2,
+                    color: Colors.white,
                   ),
                   shape: StadiumBorder(),
                   child: Text(
                     "Scan QR",
-                    style: TextStyle(fontSize: 17),
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: 'Lucida',
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green),
                   ),
                   onPressed: () async {
                     var options = ScanOptions(
-                      autoEnableFlash: true,
+                      autoEnableFlash: false,
                     );
                     var data = await BarcodeScanner.scan(options: options);
                     setState(() {

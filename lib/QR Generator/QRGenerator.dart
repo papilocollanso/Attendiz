@@ -12,13 +12,22 @@ class QRGenerator extends StatefulWidget {
 TextEditingController mycontroller = new TextEditingController();
 
 class _QRGeneratorState extends State<QRGenerator> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text("QR Generator"),
+        title: Text(
+          "QR Generator",
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontFamily: 'Lucida',
+            color: Colors.white,
+            fontSize: 17,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.green,
       ),
       body: Container(
         child: Column(
@@ -27,16 +36,30 @@ class _QRGeneratorState extends State<QRGenerator> {
             Padding(
               padding: const EdgeInsets.all(15),
               child: TextFormField(
+                cursorColor: Colors.green,
+                cursorHeight: 15,
                 controller: mycontroller,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: 'Lucida',
+                    fontSize: 15),
                 decoration: InputDecoration(
-                  errorStyle: TextStyle(color: Colors.red, fontSize: 15.0),
+                  errorStyle: TextStyle(
+                      color: Colors.red,
+                      fontSize: 15.0,
+                      fontFamily: 'Lucida',
+                      fontStyle: FontStyle.italic),
                   labelText: "Enter the data for generating a QR",
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16.0,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.link,
+                  labelStyle: TextStyle(
+                      color: Colors.green,
+                      fontFamily: 'Lucida',
+                      fontStyle: FontStyle.italic,
+                      fontSize: 15),
+                  prefixIcon: Icon(Icons.link, color: Colors.green),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: Colors.white),
                   ),
                 ),
                 onEditingComplete: navigate,
@@ -46,18 +69,18 @@ class _QRGeneratorState extends State<QRGenerator> {
               width: ((MediaQuery.of(context).size.width) / 2) - 45,
               height: 35,
               child: OutlineButton(
-                focusColor: Colors.red,
-                highlightColor: Colors.blue,
-                hoverColor: Colors.lightBlue[100],
-                splashColor: Colors.blue,
                 borderSide: BorderSide(
-                  width: 3,
-                  color: Colors.blue,
+                  width: 2,
+                  color: Colors.green,
                 ),
                 shape: StadiumBorder(),
                 child: Text(
                   "Generate QR",
-                  style: TextStyle(fontSize: 17),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Lucida',
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic),
                 ),
                 onPressed: navigate,
               ),
