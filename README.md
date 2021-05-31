@@ -6,6 +6,8 @@ Developed with the flutter framework.
 -generate Qr code image
 -ability to share Qr code image to other application at one click! sounds Amazing? Oh yeah!
 
+-ability to visit the result of the scanned QR image if a URL link at one click!
+
 ![Screenshot_20210531-003248](https://user-images.githubusercontent.com/55124189/120124825-02c70600-c1ae-11eb-921b-ae8b6d9ff100.png)
 ![Screenshot_20210531-003256](https://user-images.githubusercontent.com/55124189/120124826-035f9c80-c1ae-11eb-898b-8f9c8e54ccde.png)
 ![Screenshot_20210531-003309](https://user-images.githubusercontent.com/55124189/120124828-03f83300-c1ae-11eb-8e41-4a53bb29238a.png)
