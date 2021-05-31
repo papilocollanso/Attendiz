@@ -8,6 +8,11 @@ Developed with the flutter framework.
 
 -ability to visit the result of the scanned QR image if a URL link at one click!
 
+The main purpose of this app is to take attendance of students using Quick Response (QR) code as a form of authentication.
+
+
+why not try it out?
+
 ![Screenshot_20210531-003248](https://user-images.githubusercontent.com/55124189/120124825-02c70600-c1ae-11eb-921b-ae8b6d9ff100.png)
 ![Screenshot_20210531-003256](https://user-images.githubusercontent.com/55124189/120124826-035f9c80-c1ae-11eb-898b-8f9c8e54ccde.png)
 ![Screenshot_20210531-003309](https://user-images.githubusercontent.com/55124189/120124828-03f83300-c1ae-11eb-8e41-4a53bb29238a.png)
